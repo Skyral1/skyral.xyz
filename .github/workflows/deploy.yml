@@ -16,12 +16,10 @@ jobs:
 
       - name: Sync files to Web Root
         run: |
-          # -a : archive mode
-          # -v : verbose
-          # --delete : supprime les fichiers qui ne sont plus dans le repo
-          # -I : ignore-times (force la copie même si la taille/date semble identique)
-          # --chmod=Du=rwx,Dg=rwx,Do=rx,Fu=rw,Fg=rw,Fo=r : force les bonnes permissions
-          rsync -avI --delete --exclude '.git' --exclude '.github' --chmod=Du=rwx,Dg=rwx,Do=rx,Fu=rw,Fg=rw,Fo=r ./ /var/www/html/
+          # Utiliser rsync pour copier proprement les fichiers
+          # --delete supprime les fichiers sur le serveur qui n'existent plus dans le repo
+          # --exclude .git évite d'écraser le dossier git s'il existe déjà
+          rsync -av --delete --exclude '.git' --exclude '.github' ./ /var/www/html/
 
       - name: Fix Permissions
         run: |
