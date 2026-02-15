@@ -51,6 +51,7 @@ a {
 
 .text-gradient {
 	background: linear-gradient(to right, var(--primary), var(--secondary));
+	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	color: var(--primary);
