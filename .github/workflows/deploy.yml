@@ -1,0 +1,28 @@
+name: Deploy to Apache Server
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: self-hosted  # <--- Important : utilise TON serveur
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          clean: false  # Évite de tout supprimer avant le pull
+      
+      - name: Sync files to Web Root
+        run: |
+          # Utiliser rsync pour copier proprement les fichiers
+          # --delete supprime les fichiers sur le serveur qui n'existent plus dans le repo
+          # --exclude .git évite d'écraser le dossier git s'il existe déjà
+          rsync -av --delete --exclude '.git' --exclude '.github' ./ /var/www/html/
+          
+      - name: Fix Permissions
+        run: |
+          # S'assurer que Apache peut toujours lire les fichiers
+          sudo chown -R deploy:www-data /var/www/html
+          sudo chmod -R 775 /var/www/html
