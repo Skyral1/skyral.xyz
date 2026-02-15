@@ -3,105 +3,183 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Portfolio - Étudiant en Informatique</title>
-        <link rel="stylesheet" href="assets/css/main.css">
+		<title>Skyral | Full Stack & SysAdmin</title>
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Icons -->
+		<script src="https://unpkg.com/feather-icons"></script>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="assets/css/variables.css" />
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<link rel="stylesheet" href="assets/css/components.css" />
 	</head>
 	<body>
+		<div class="grid-bg"></div>
+
 		<div class="container">
+			<!-- Hero Section -->
 			<header>
-				<h1>👨‍💻 Portfolio</h1>
-				<p class="subtitle">Étudiant en Informatique | 6ème année secondaire</p>
-				<div class="location">
-					<span>📍</span>
-					<span>Bruxelles, Belgique</span>
+				<div class="terminal-badge mono">
+					<i data-feather="terminal" width="14"></i>
+					<span>skyral@homelab:~$ ./init_portfolio.sh</span>
+				</div>
+
+				<h1>Bonjour, je suis <span class="text-gradient">Skyral</span>.</h1>
+
+				<p class="hero-desc">
+					Étudiant en informatique & passionné de HomeLab. Je construis des
+					infrastructures, je code en PHP/JS et je casse (parfois) des serveurs
+					Linux pour apprendre.
+				</p>
+
+				<div class="cta-group">
+					<a
+						href="https://github.com/Skyral1"
+						target="_blank"
+						class="btn btn-primary"
+					>
+						<i data-feather="github"></i> Voir mon GitHub
+					</a>
+					<a href="mailto:ton-email@example.com" class="btn btn-outline">
+						<i data-feather="mail"></i> Me contacter
+					</a>
+				</div>
+
+				<div class="terminal-window">
+					<div class="terminal-header">
+						<div class="dot red"></div>
+						<div class="dot yellow"></div>
+						<div class="dot green"></div>
+					</div>
+					<div class="terminal-body">
+						<div>
+							<span class="prompt">➜</span> <span class="path">~</span>
+							<span class="cmd">neofetch</span>
+						</div>
+						<br />
+						<div class="neofetch-container">
+							<div class="neofetch-logo">
+								.<br />
+								/ \<br />
+								/ \<br />
+								/ | \<br />
+								/ | \<br />
+								/ | \<br />
+								/ | \<br />
+								/______|______
+							</div>
+							<div class="neofetch-info">
+								<span class="cmd">Skyral</span>@<span class="cmd">HomeLab</span
+								><br />
+								----------------<br />
+								<span class="prompt">OS</span>: Ubuntu 24.04 LTS<br />
+								<span class="prompt">Host</span>: VMware ESXi<br />
+								<span class="prompt">Uptime</span>: 99.9%<br />
+								<span class="prompt">Shell</span>: zsh 5.9<br />
+								<span class="prompt">Loves</span>: Docker, PHP, Hardware<br />
+								<span class="prompt">Status</span>: Student @ Belgium<br />
+							</div>
+						</div>
+					</div>
 				</div>
 			</header>
 
-			<div class="section">
-				<h2>🎓 À propos</h2>
-				<p>
-					Étudiant passionné d'informatique en 6ème année secondaire en
-					Belgique, je me spécialise dans le développement web et
-					l'administration système. Mon parcours académique et mes projets
-					personnels m'ont permis de développer des compétences solides dans
-					plusieurs domaines techniques, allant du développement backend au
-					déploiement d'infrastructures.
-				</p>
-			</div>
+			<!-- Skills Section -->
+			<section class="section" id="skills">
+				<div class="section-header">
+					<h2 class="section-title">Stack Technique</h2>
+					<p class="section-subtitle">
+						Les outils que j'utilise au quotidien dans mes projets et mon lab.
+					</p>
+				</div>
 
-			<div class="section">
-				<h2>💻 Compétences Techniques</h2>
 				<div class="skills-grid">
-					<div class="skill-category">
+					<!-- Card 1 -->
+					<div class="card">
+						<div class="card-icon"><i data-feather="server"></i></div>
+						<h3>SysAdmin & DevOps</h3>
+						<p>Gestion de serveurs et déploiement.</p>
+						<div class="tech-tags mono">
+							<span class="tag">Linux</span>
+							<span class="tag">Docker</span>
+							<span class="tag">Nginx/Apache</span>
+							<span class="tag">VMware</span>
+						</div>
+					</div>
+
+					<!-- Card 2 -->
+					<div class="card">
+						<div class="card-icon"><i data-feather="code"></i></div>
 						<h3>Développement Web</h3>
-						<ul>
-							<li>PHP (Backend)</li>
-							<li>MySQL (Bases de données)</li>
-							<li>JavaScript (Frontend)</li>
-							<li>HTML/CSS</li>
-						</ul>
+						<p>Création d'applications et de sites web.</p>
+						<div class="tech-tags mono">
+							<span class="tag">PHP 8</span>
+							<span class="tag">MySQL</span>
+							<span class="tag">JavaScript</span>
+							<span class="tag">Git</span>
+						</div>
 					</div>
 
-					<div class="skill-category">
-						<h3>Administration Système</h3>
-						<ul>
-							<li>Windows 11</li>
-							<li>Ubuntu Linux</li>
-							<li>VMware</li>
-							<li>Configuration serveurs</li>
-						</ul>
-					</div>
-
-					<div class="skill-category">
-						<h3>Outils & Technologies</h3>
-						<ul>
-							<li>Git (Versioning)</li>
-							<li>VS Code</li>
-							<li>Virtualisation</li>
-							<li>DevOps basics</li>
-						</ul>
+					<!-- Card 3 -->
+					<div class="card">
+						<div class="card-icon"><i data-feather="cpu"></i></div>
+						<h3>Hardware</h3>
+						<p>Comprendre ce qui se passe sous le capot.</p>
+						<div class="tech-tags mono">
+							<span class="tag">PC Building</span>
+							<span class="tag">Networking</span>
+							<span class="tag">Troubleshooting</span>
+						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 
-			<div class="section">
-				<h2>🛠️ Environnement de Travail</h2>
-				<div class="tools">
-					<span class="tool-badge">VS Code</span>
-					<span class="tool-badge">Windows 11</span>
-					<span class="tool-badge">Ubuntu</span>
-					<span class="tool-badge">Git</span>
-					<span class="tool-badge">VMware</span>
-					<span class="tool-badge">Steam</span>
+			<!-- Projects Section -->
+			<section class="section" id="projects">
+				<div class="section-header">
+					<h2 class="section-title">Projets Récents</h2>
 				</div>
-			</div>
+				<div class="skills-grid">
+					<a
+						href="https://github.com/Skyral1/skyral.xyz"
+						class="card link-card"
+					>
+						<div class="card-icon"><i data-feather="layout"></i></div>
+						<h3>skyral.xyz</h3>
+						<p>
+							Le site sur lequel vous êtes actuellement. Portfolio personnel et
+							landing page.
+						</p>
+						<div class="tech-tags mono">
+							<span class="tag">HTML/CSS</span>
+							<span class="tag">GitHub Pages</span>
+						</div>
+					</a>
 
-			<div class="section">
-				<h2>🎯 Centres d'Intérêt</h2>
-				<div class="interests">
-					<div class="interest-card">🖥️ Développement Web</div>
-					<div class="interest-card">⚙️ Administration Système</div>
-					<div class="interest-card">🎮 Jeux PC</div>
-					<div class="interest-card">🔧 Hardware</div>
-					<div class="interest-card">📚 Analyse Littéraire</div>
-					<div class="interest-card">🏠 HomeLab</div>
+					<div class="card disabled-card">
+						<div class="card-icon"><i data-feather="box"></i></div>
+						<h3>Projet à venir</h3>
+						<p>Plus de projets seront ajoutés bientôt depuis mon GitHub.</p>
+					</div>
 				</div>
-			</div>
-
-			<div class="section">
-				<h2>🎓 Parcours</h2>
-				<p>
-					<strong>Formation actuelle :</strong> 6ème année secondaire en
-					Informatique<br />
-					<strong>Niveau technique :</strong> Intermédiaire à Avancé<br />
-					<strong>Spécialisations :</strong> Développement web full-stack,
-					Administration système, Virtualisation
-				</p>
-			</div>
-
-			<footer>
-				<p>Créé avec passion 💜 | Février 2026</p>
-			</footer>
+			</section>
 		</div>
+
+		<footer>
+			<p class="mono">
+				© 2026 Skyral. Fait avec
+				<i data-feather="heart" class="heart-icon"></i> et du code.
+			</p>
+		</footer>
+
+		<!-- JS -->
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
