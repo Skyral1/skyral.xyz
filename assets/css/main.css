@@ -1,6 +1,6 @@
 /* =========================================
-           VARIABLES
-           ========================================= */
+   VARIABLES
+   ========================================= */
 :root {
 	--bg: #0f172a;
 	--surface: #1e293b;
@@ -14,8 +14,8 @@
 }
 
 /* =========================================
-           RESET & BASE STYLES
-           ========================================= */
+   RESET & BASE STYLES
+   ========================================= */
 * {
 	margin: 0;
 	padding: 0;
@@ -31,6 +31,13 @@ body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+}
+
+/* Accessibilité */
+:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+	border-radius: 4px;
 }
 
 /* Typography */
@@ -51,7 +58,6 @@ a {
 
 .text-gradient {
 	background: linear-gradient(to right, var(--primary), var(--secondary));
-	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	color: var(--primary);
@@ -88,8 +94,8 @@ a {
 }
 
 /* =========================================
-           HEADER / HERO
-           ========================================= */
+   HEADER / HERO
+   ========================================= */
 header {
 	min-height: 85vh;
 	display: flex;
@@ -164,8 +170,8 @@ h1 {
 }
 
 /* =========================================
-           TERMINAL
-           ========================================= */
+   TERMINAL
+   ========================================= */
 .terminal-window {
 	background: #0d1117;
 	border-radius: 8px;
@@ -183,6 +189,18 @@ h1 {
 	display: flex;
 	gap: 8px;
 	border-bottom: 1px solid #30363d;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
 }
 
 .dot {
@@ -211,17 +229,16 @@ h1 {
 	display: flex;
 	gap: 2rem;
 	margin-top: 1rem;
-	align-items: flex-start; /* Aligne le logo en haut avec le texte */
+	align-items: flex-start;
 }
 
-/* Le sapin en propre */
 .neofetch-logo {
 	color: var(--primary);
 	font-weight: bold;
 	line-height: 1.2;
 	margin: 0;
 	padding: 0;
-	user-select: none; /* Empêche la sélection du logo lors d'un copier-coller */
+	user-select: none;
 }
 
 .cmd {
@@ -242,8 +259,8 @@ h1 {
 }
 
 /* =========================================
-           SECTIONS & CARDS
-           ========================================= */
+   SECTIONS & CARDS
+   ========================================= */
 .section-header {
 	margin-bottom: 2rem;
 }
@@ -323,8 +340,8 @@ h1 {
 }
 
 /* =========================================
-           FOOTER
-           ========================================= */
+   FOOTER
+   ========================================= */
 footer {
 	border-top: 1px solid var(--border-color);
 	padding: 2rem 0;
@@ -333,4 +350,92 @@ footer {
 	font-size: 0.9rem;
 	margin-top: auto;
 	background: rgba(15, 23, 42, 0.5);
+}
+
+/* =========================================
+   LANGUAGE SWITCHER
+   ========================================= */
+.lang-switcher {
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	z-index: 100;
+}
+
+.lang-btn {
+	background: rgba(30, 41, 59, 0.5);
+	border: 1px solid var(--border-color);
+	color: var(--text);
+	padding: 0.5rem 1rem;
+	border-radius: 8px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-family: "Inter", sans-serif;
+	font-weight: 600;
+	font-size: 0.9rem;
+	transition: all 0.2s ease;
+	backdrop-filter: blur(5px);
+}
+
+.lang-btn:hover,
+.lang-btn[aria-expanded="true"] {
+	background: var(--surface);
+	border-color: var(--text-dim);
+}
+
+.lang-dropdown {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	margin-top: 0.5rem;
+	background: var(--surface);
+	border: 1px solid var(--border-color);
+	border-radius: 8px;
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+	min-width: 150px;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-10px);
+	transition: all 0.2s ease;
+	overflow: hidden;
+}
+
+.lang-dropdown.show {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.lang-option {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.75rem 1rem;
+	color: var(--text);
+	text-decoration: none;
+	transition: background 0.2s;
+	font-size: 0.9rem;
+}
+
+.lang-option:hover {
+	background: var(--surface-hover);
+}
+
+.lang-option.active {
+	color: var(--primary);
+	font-weight: bold;
+	background: rgba(56, 189, 248, 0.1);
+}
+
+.flag-icon {
+	font-size: 1.1em;
+}
+
+@media (max-width: 600px) {
+	.lang-switcher {
+		top: 1rem;
+		right: 1rem;
+	}
 }

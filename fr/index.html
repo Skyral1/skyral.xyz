@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Portfolio de Skyral, étudiant en informatique et passionné de HomeLab. SysAdmin, DevOps et Développement Web."
+		/>
+		<meta name="theme-color" content="#0f172a" />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content="Skyral | Full Stack & SysAdmin" />
+		<meta
+			property="og:description"
+			content="Portfolio d'étudiant passionné par le HomeLab, Linux et le Code."
+		/>
+		<meta property="og:type" content="website" />
+
+		<title>Skyral | Full Stack & SysAdmin</title>
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Icons Script -->
+		<script src="https://unpkg.com/feather-icons"></script>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body>
+		<div class="grid-bg" aria-hidden="true"></div>
+
+		<!-- Language Switcher -->
+		<div class="lang-switcher">
+			<button
+				class="lang-btn"
+				id="langBtn"
+				aria-expanded="false"
+				aria-haspopup="true"
+			>
+				<span class="flag-icon">🇫🇷</span>
+				<span>Français</span>
+				<i data-feather="chevron-down" width="16"></i>
+			</button>
+			<div
+				class="lang-dropdown"
+				id="langDropdown"
+				aria-label="Choisir la langue"
+			>
+				<a href="./" class="lang-option active" data-lang="fr">
+					<span class="flag-icon">🇫🇷</span> Français
+				</a>
+				<a href="../en/" class="lang-option" data-lang="en">
+					<span class="flag-icon">🇬🇧</span> English
+				</a>
+			</div>
+		</div>
+
+		<div class="container">
+			<!-- HEADER -->
+			<header role="banner">
+				<div class="terminal-badge mono" role="status">
+					<i data-feather="terminal" width="14" aria-hidden="true"></i>
+					<span>skyral@homelab:~$ ./init_portfolio.sh</span>
+				</div>
+
+				<h1>Bonjour, je suis <span class="text-gradient">Skyral</span>.</h1>
+
+				<p class="hero-desc">
+					Étudiant en informatique & passionné de HomeLab. Je construis des
+					infrastructures, je code en PHP/JS et je casse (parfois) des serveurs
+					Linux pour apprendre.
+				</p>
+
+				<nav class="cta-group" aria-label="Liens principaux">
+					<a
+						href="https://github.com/Skyral1"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="btn btn-primary"
+					>
+						<i data-feather="github" aria-hidden="true"></i>
+						<span>Voir mon GitHub</span>
+						<span class="sr-only">(s'ouvre dans un nouvel onglet)</span>
+					</a>
+					<a
+						href="mailto:contact@skyral.xyz"
+						class="btn btn-outline"
+					>
+						<i data-feather="mail" aria-hidden="true"></i>
+						<span>Me contacter</span>
+					</a>
+				</nav>
+
+				<div
+					class="terminal-window"
+					role="img"
+					aria-label="Terminal affichant les informations système via neofetch"
+				>
+					<div class="terminal-header" aria-hidden="true">
+						<div class="dot red"></div>
+						<div class="dot yellow"></div>
+						<div class="dot green"></div>
+					</div>
+					<div class="terminal-body">
+						<div style="margin-bottom: 1rem">
+							<span class="prompt" aria-hidden="true">➜</span>
+							<span class="path" aria-hidden="true">~</span>
+							<span class="cmd" aria-hidden="true">neofetch</span>
+						</div>
+
+						<div class="neofetch-container">
+							<pre class="neofetch-logo" aria-hidden="true">
+       .
+      / \
+     /   \
+    /  |  \
+   /   |   \
+  /    |    \
+ /     |     \
+/______|______\</pre
+							>
+							<div class="neofetch-info">
+								<div>
+									<span class="cmd">Skyral</span>@<span class="cmd"
+										>HomeLab</span
+									>
+								</div>
+								<div aria-hidden="true">----------------</div>
+								<div><span class="prompt">OS</span>: Debian 13</div>
+								<div><span class="prompt">Host</span>: Proxmox VE</div>
+								<div><span class="prompt">Uptime</span>: 99.9%</div>
+								<div><span class="prompt">Shell</span>: zsh 5.9</div>
+								<div>
+									<span class="prompt">Loves</span>: Docker, PHP, Hardware
+								</div>
+								<div><span class="prompt">Status</span>: Student @ Belgium</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<!-- SKILLS -->
+			<section class="section" id="skills" aria-labelledby="skills-title">
+				<div class="section-header">
+					<h2 id="skills-title" class="section-title">Stack Technique</h2>
+					<p class="section-subtitle">
+						Les outils que j'utilise au quotidien dans mes projets et mon lab.
+					</p>
+				</div>
+
+				<div class="skills-grid">
+					<article class="card">
+						<div class="card-icon" aria-hidden="true">
+							<i data-feather="server"></i>
+						</div>
+						<h3>SysAdmin & DevOps</h3>
+						<p>Gestion de serveurs et déploiement.</p>
+						<div class="tech-tags mono" aria-label="Technologies utilisées">
+							<span class="tag">Linux</span>
+							<span class="tag">Docker</span>
+							<span class="tag">Nginx/Apache</span>
+							<span class="tag">VMware</span>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card-icon" aria-hidden="true">
+							<i data-feather="code"></i>
+						</div>
+						<h3>Développement Web</h3>
+						<p>Création d'applications et de sites web.</p>
+						<div class="tech-tags mono" aria-label="Technologies utilisées">
+							<span class="tag">PHP 8</span>
+							<span class="tag">MySQL</span>
+							<span class="tag">JavaScript</span>
+							<span class="tag">Git</span>
+						</div>
+					</article>
+
+					<article class="card">
+						<div class="card-icon" aria-hidden="true">
+							<i data-feather="cpu"></i>
+						</div>
+						<h3>Hardware</h3>
+						<p>Comprendre ce qui se passe sous le capot.</p>
+						<div class="tech-tags mono" aria-label="Technologies utilisées">
+							<span class="tag">PC Building</span>
+							<span class="tag">Networking</span>
+							<span class="tag">Troubleshooting</span>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<!-- PROJECTS -->
+			<section class="section" id="projects" aria-labelledby="projects-title">
+				<div class="section-header">
+					<h2 id="projects-title" class="section-title">Projets Récents</h2>
+				</div>
+				<div class="skills-grid">
+					<a
+						href="https://github.com/Skyral1/skyral.xyz"
+						class="card link-card"
+						aria-label="Projet skyral.xyz : Portfolio personnel"
+					>
+						<div class="card-icon" aria-hidden="true">
+							<i data-feather="layout"></i>
+						</div>
+						<h3>skyral.xyz</h3>
+						<p>
+							Le site sur lequel vous êtes actuellement. Portfolio personnel et
+							landing page.
+						</p>
+						<div class="tech-tags mono">
+							<span class="tag">HTML/CSS</span>
+							<span class="tag">GitHub Pages</span>
+						</div>
+					</a>
+
+					<article class="card disabled-card">
+						<div class="card-icon" aria-hidden="true">
+							<i data-feather="box"></i>
+						</div>
+						<h3>Projet à venir</h3>
+						<p>Plus de projets seront ajoutés bientôt depuis mon GitHub.</p>
+					</article>
+				</div>
+			</section>
+		</div>
+
+		<footer role="contentinfo">
+			<p class="mono">
+				© 2026 Skyral. Fait avec
+				<span class="sr-only">amour</span>
+				<i
+					data-feather="heart"
+					style="width: 12px; vertical-align: middle; color: #ef4444"
+					aria-hidden="true"
+				></i>
+				et du code.
+			</p>
+		</footer>
+
+		<!-- Initialisation des icônes -->
+		<script>
+			feather.replace();
+		</script>
+
+		<!-- Script Principal -->
+		<script src="../assets/js/main.js"></script>
+	</body>
+</html>
