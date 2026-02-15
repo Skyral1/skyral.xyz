@@ -24,5 +24,5 @@ jobs:
       - name: Fix Permissions
         run: |
           # S'assurer que Apache peut toujours lire les fichiers
-          sudo chown -R deploy:www-data /var/www/html
-          sudo chmod -R 775 /var/www/html
+          chown -R deploy:www-data /var/www/html
+          chmod -R 775 /var/www/html
