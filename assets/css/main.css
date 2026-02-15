@@ -1,12 +1,12 @@
 /* =========================================
-   VARIABLES
-   ========================================= */
+           VARIABLES
+           ========================================= */
 :root {
 	--bg: #0f172a;
 	--surface: #1e293b;
 	--surface-hover: #2d3f56;
-	--primary: #38bdf8; /* Sky Blue */
-	--secondary: #818cf8; /* Indigo */
+	--primary: #38bdf8;
+	--secondary: #818cf8;
 	--accent: #22d3ee;
 	--text: #f8fafc;
 	--text-dim: #94a3b8;
@@ -14,8 +14,8 @@
 }
 
 /* =========================================
-   RESET & BASE STYLES
-   ========================================= */
+           RESET & BASE STYLES
+           ========================================= */
 * {
 	margin: 0;
 	padding: 0;
@@ -29,24 +29,11 @@ body {
 	line-height: 1.6;
 	overflow-x: hidden;
 	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
-/* Scrollbar personnalisé */
-::-webkit-scrollbar {
-	width: 10px;
-}
-::-webkit-scrollbar-track {
-	background: var(--bg);
-}
-::-webkit-scrollbar-thumb {
-	background: var(--surface);
-	border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-	background: var(--text-dim);
-}
-
-/* Typography & Utilities */
+/* Typography */
 h1,
 h2,
 h3 {
@@ -57,24 +44,32 @@ h3 {
 .mono {
 	font-family: "JetBrains Mono", monospace;
 }
+a {
+	text-decoration: none;
+	color: inherit;
+}
 
 .text-gradient {
 	background: linear-gradient(to right, var(--primary), var(--secondary));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	background-clip: text;
-	color: transparent; /* Fallback */
+	color: var(--primary);
 }
 
+/* Main Container */
 .container {
+	width: 100%;
 	max-width: 1000px;
 	margin: 0 auto;
-	padding: 0 2rem;
+	padding: 2rem;
 	position: relative;
 	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
 }
 
-/* Grid Background Effect */
+/* Background */
 .grid-bg {
 	position: fixed;
 	top: 0;
@@ -92,37 +87,34 @@ h3 {
 }
 
 /* =========================================
-   HEADER / HERO SECTION
-   ========================================= */
+           HEADER / HERO
+           ========================================= */
 header {
-	min-height: 95vh;
+	min-height: 85vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	position: relative;
 	padding-top: 2rem;
 }
 
 h1 {
-	font-size: clamp(2.5rem, 6vw, 4.5rem);
-	margin-bottom: 1.5rem;
+	font-size: clamp(2.5rem, 5vw, 4.5rem);
+	margin-bottom: 1rem;
 }
 
 .hero-desc {
-	font-size: 1.15rem;
+	font-size: 1.1rem;
 	color: var(--text-dim);
-	max-width: 650px;
-	margin-bottom: 2.5rem;
+	max-width: 600px;
+	margin-bottom: 2rem;
 }
 
-/* =========================================
-   BUTTONS
-   ========================================= */
+/* Buttons */
 .cta-group {
 	display: flex;
 	gap: 1rem;
+	margin-bottom: 2.5rem;
 	flex-wrap: wrap;
-	margin-bottom: 3rem;
 }
 
 .btn {
@@ -132,10 +124,7 @@ h1 {
 	padding: 0.75rem 1.5rem;
 	border-radius: 8px;
 	font-weight: 600;
-	text-decoration: none;
 	transition: all 0.2s ease;
-	cursor: pointer;
-	border: 1px solid transparent;
 }
 
 .btn-primary {
@@ -143,16 +132,14 @@ h1 {
 	color: var(--bg);
 }
 .btn-primary:hover {
-	background: var(--accent);
 	transform: translateY(-2px);
-	box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+	background: var(--accent);
 }
 
 .btn-outline {
 	border: 1px solid var(--border-color);
 	color: var(--text);
 	background: rgba(30, 41, 59, 0.5);
-	backdrop-filter: blur(5px);
 }
 .btn-outline:hover {
 	border-color: var(--text-dim);
@@ -160,131 +147,26 @@ h1 {
 	background: var(--surface);
 }
 
-/* =========================================
-   BADGES & TAGS
-   ========================================= */
+/* Badge */
 .terminal-badge {
 	background: rgba(56, 189, 248, 0.1);
 	color: var(--primary);
-	padding: 0.5rem 1rem;
+	padding: 0.4rem 0.8rem;
 	border-radius: 99px;
 	font-size: 0.85rem;
 	display: inline-flex;
 	align-items: center;
-	gap: 0.6rem;
+	gap: 0.5rem;
 	margin-bottom: 1.5rem;
 	border: 1px solid rgba(56, 189, 248, 0.2);
 	align-self: flex-start;
 }
 
-.tech-tags {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.6rem;
-	margin-top: auto; /* Pousse les tags vers le bas */
-	padding-top: 1rem;
-}
-
-.tag {
-	font-size: 0.75rem;
-	padding: 0.3rem 0.6rem;
-	background: rgba(255, 255, 255, 0.05);
-	border-radius: 4px;
-	color: var(--primary);
-	border: 1px solid transparent;
-	transition: border-color 0.2s;
-}
-
-.card:hover .tag {
-	border-color: rgba(56, 189, 248, 0.2);
-}
-
 /* =========================================
-   CARDS & SECTIONS
-   ========================================= */
-.section {
-	padding: 5rem 0;
-}
-.section-header {
-	margin-bottom: 3rem;
-}
-.section-title {
-	font-size: 2rem;
-	margin-bottom: 0.5rem;
-	color: var(--text);
-}
-.section-subtitle {
-	color: var(--text-dim);
-	font-size: 1.1rem;
-}
-
-.skills-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	gap: 1.5rem;
-	width: 100%;
-}
-
-.card {
-	background: var(--surface);
-	padding: 2rem;
-	border-radius: 12px;
-	border: 1px solid var(--border-color);
-	transition: all 0.25s ease;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	overflow: hidden;
-}
-
-/* Effet de glow subtil au hover */
-.card:hover {
-	transform: translateY(-5px);
-	border-color: rgba(56, 189, 248, 0.3);
-	background: var(--surface-hover);
-	box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-}
-
-.link-card {
-	text-decoration: none;
-	color: inherit;
-	cursor: pointer;
-}
-.disabled-card {
-	opacity: 0.5;
-	cursor: default;
-}
-
-.card-icon {
-	color: var(--primary);
-	margin-bottom: 1.25rem;
-	/* Cercle autour de l'icône */
-	background: rgba(56, 189, 248, 0.1);
-	width: 48px;
-	height: 48px;
-	border-radius: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.card h3 {
-	margin-bottom: 0.75rem;
-	font-size: 1.25rem;
-	color: var(--text);
-}
-.card p {
-	color: var(--text-dim);
-	font-size: 0.95rem;
-	line-height: 1.6;
-}
-
-/* =========================================
-   TERMINAL WINDOW
-   ========================================= */
+           TERMINAL
+           ========================================= */
 .terminal-window {
-	background: #0d1117; /* Plus sombre pour le terminal */
+	background: #0d1117;
 	border-radius: 8px;
 	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 	overflow: hidden;
@@ -296,7 +178,7 @@ h1 {
 
 .terminal-header {
 	background: #161b22;
-	padding: 0.75rem 1rem;
+	padding: 0.8rem 1rem;
 	display: flex;
 	gap: 8px;
 	border-bottom: 1px solid #30363d;
@@ -324,6 +206,23 @@ h1 {
 	line-height: 1.5;
 }
 
+.neofetch-container {
+	display: flex;
+	gap: 2rem;
+	margin-top: 1rem;
+	align-items: flex-start; /* Aligne le logo en haut avec le texte */
+}
+
+/* Le sapin en propre */
+.neofetch-logo {
+	color: var(--primary);
+	font-weight: bold;
+	line-height: 1.2;
+	margin: 0;
+	padding: 0;
+	user-select: none; /* Empêche la sélection du logo lors d'un copier-coller */
+}
+
 .cmd {
 	color: #e6edf3;
 	font-weight: bold;
@@ -333,52 +232,104 @@ h1 {
 }
 .prompt {
 	color: #27c93f;
-} /* Vert classique terminal */
-
-.neofetch-container {
-	display: flex;
-	gap: 3rem;
-	margin-top: 1rem;
 }
 
-.neofetch-logo {
-	color: var(--primary);
-	font-weight: bold;
-	user-select: none;
-}
-
-.neofetch-info {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-/* Responsive Terminal */
 @media (max-width: 768px) {
-	.neofetch-container {
-		flex-direction: column;
-		gap: 1.5rem;
-	}
 	.neofetch-logo {
 		display: none;
-	} /* On cache le logo ASCII sur mobile pour gagner de la place */
+	}
 }
 
 /* =========================================
-   FOOTER
-   ========================================= */
+           SECTIONS & CARDS
+           ========================================= */
+.section-header {
+	margin-bottom: 2rem;
+}
+.section-title {
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+	color: var(--text);
+}
+.section-subtitle {
+	color: var(--text-dim);
+}
+
+.skills-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1.5rem;
+}
+
+.card {
+	background: var(--surface);
+	padding: 1.5rem;
+	border-radius: 12px;
+	border: 1px solid var(--border-color);
+	transition: all 0.2s ease;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.card:hover {
+	transform: translateY(-4px);
+	border-color: rgba(56, 189, 248, 0.3);
+	background: var(--surface-hover);
+}
+
+.card-icon {
+	color: var(--primary);
+	margin-bottom: 1rem;
+	background: rgba(56, 189, 248, 0.1);
+	width: 48px;
+	height: 48px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card h3 {
+	margin-bottom: 0.5rem;
+	font-size: 1.25rem;
+}
+.card p {
+	color: var(--text-dim);
+	font-size: 0.95rem;
+	flex-grow: 1;
+	margin-bottom: 1rem;
+}
+
+.tech-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: auto;
+}
+.tag {
+	font-size: 0.75rem;
+	padding: 0.25rem 0.5rem;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 4px;
+	color: var(--primary);
+	border: 1px solid transparent;
+}
+
+.disabled-card {
+	opacity: 0.6;
+	cursor: default;
+}
+
+/* =========================================
+           FOOTER
+           ========================================= */
 footer {
 	border-top: 1px solid var(--border-color);
-	padding: 3rem 0;
+	padding: 2rem 0;
 	text-align: center;
 	color: var(--text-dim);
 	font-size: 0.9rem;
-	margin-top: 2rem;
-	background: rgba(15, 23, 42, 0.8);
-}
-
-.heart-icon {
-	width: 14px;
-	vertical-align: middle;
-	color: #ef4444; /* Rouge pour le coeur */
+	margin-top: auto;
+	background: rgba(15, 23, 42, 0.5);
 }

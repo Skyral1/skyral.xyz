@@ -4,25 +4,19 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Skyral | Full Stack & SysAdmin</title>
-
-		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap"
 			rel="stylesheet"
 		/>
-
-		<!-- Icons -->
 		<script src="https://unpkg.com/feather-icons"></script>
-
-		<!-- CSS (unifié) -->
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body>
 		<div class="grid-bg"></div>
 
 		<div class="container">
-			<!-- Hero Section -->
+			<!-- HEADER -->
 			<header>
 				<div class="terminal-badge mono">
 					<i data-feather="terminal" width="14"></i>
@@ -45,7 +39,7 @@
 					>
 						<i data-feather="github"></i> Voir mon GitHub
 					</a>
-					<a href="mailto:ton-email@example.com" class="btn btn-outline">
+					<a href="mailto:thibault.soquette.pro@gmail.com" class="btn btn-outline">
 						<i data-feather="mail"></i> Me contacter
 					</a>
 				</div>
@@ -63,24 +57,25 @@
 						</div>
 
 						<div class="neofetch-container">
-							<div class="neofetch-logo">
-								.<br />
-								/ \<br />
-								/ \<br />
-								/ | \<br />
-								/ | \<br />
-								/ | \<br />
-								/ | \<br />
-								/______|______
-							</div>
+							<!-- Utilisation de la balise <pre> pour préserver l'espace et les sauts de ligne -->
+							<pre class="neofetch-logo">
+       .
+      / \
+     /   \
+    /  |  \
+   /   |   \
+  /    |    \
+ /     |     \
+/______|______\</pre
+							>
 							<div class="neofetch-info">
 								<span class="cmd">Skyral</span>@<span class="cmd">HomeLab</span
 								><br />
 								----------------<br />
-								<span class="prompt">OS</span>: Ubuntu 24.04 LTS<br />
-								<span class="prompt">Host</span>: VMware ESXi<br />
+								<span class="prompt">OS</span>: Debian 13<br />
+								<span class="prompt">Host</span>: Proxmox VE<br />
 								<span class="prompt">Uptime</span>: 99.9%<br />
-								<span class="prompt">Shell</span>: zsh 5.9<br />
+								<!-- <span class="prompt">Shell</span>: zsh 5.9<br /> -->
 								<span class="prompt">Loves</span>: Docker, PHP, Hardware<br />
 								<span class="prompt">Status</span>: Student @ Belgium<br />
 							</div>
@@ -89,7 +84,7 @@
 				</div>
 			</header>
 
-			<!-- Skills Section -->
+			<!-- SKILLS -->
 			<section class="section" id="skills">
 				<div class="section-header">
 					<h2 class="section-title">Stack Technique</h2>
@@ -99,7 +94,6 @@
 				</div>
 
 				<div class="skills-grid">
-					<!-- Card 1 -->
 					<div class="card">
 						<div class="card-icon"><i data-feather="server"></i></div>
 						<h3>SysAdmin & DevOps</h3>
@@ -112,7 +106,6 @@
 						</div>
 					</div>
 
-					<!-- Card 2 -->
 					<div class="card">
 						<div class="card-icon"><i data-feather="code"></i></div>
 						<h3>Développement Web</h3>
@@ -125,7 +118,6 @@
 						</div>
 					</div>
 
-					<!-- Card 3 -->
 					<div class="card">
 						<div class="card-icon"><i data-feather="cpu"></i></div>
 						<h3>Hardware</h3>
@@ -139,7 +131,7 @@
 				</div>
 			</section>
 
-			<!-- Projects Section -->
+			<!-- PROJECTS -->
 			<section class="section" id="projects">
 				<div class="section-header">
 					<h2 class="section-title">Projets Récents</h2>
@@ -173,11 +165,13 @@
 		<footer>
 			<p class="mono">
 				© 2026 Skyral. Fait avec
-				<i data-feather="heart" class="heart-icon"></i> et du code.
+				<i data-feather="heart" style="width: 12px; vertical-align: middle"></i>
+				et du code.
 			</p>
 		</footer>
 
-		<!-- JS -->
-		<script src="assets/js/main.js"></script>
+		<script>
+			feather.replace();
+		</script>
 	</body>
 </html>
