@@ -1,66 +1,63 @@
 # Skyral.xyz 🌐
 
-Bienvenue sur le dépôt source de mon portfolio personnel **[skyral.xyz](https://skyral.xyz)**.
-Ce projet est une vitrine de mes compétences en tant qu'étudiant en informatique, passionné par le HomeLab, l'administration système et le développement web.
+Welcome to the source repository of my personal portfolio **[skyral.xyz](https://skyral.xyz)**.
+This project showcases my skills as an IT student, passionate about HomeLab, system administration, and web development.
 
 ![Skyral Portfolio Preview](https://github.com/user-attachments/assets/placeholder-image-url)
 
-## 🚀 Fonctionnalités
+## 🚀 Features
 
-- **Design Terminal & Moderne** : Une interface sombre inspirée des terminaux Linux, avec un `neofetch` interactif.
-- **Multilingue (FR/EN)** : Support complet du Français et de l'Anglais avec détection automatique et menu de changement de langue.
-- **Performance & SEO** : Score Lighthouse quasi-parfait (100/100), optimisé pour le référencement et l'accessibilité.
-- **Stack Légère** : HTML5 sémantique, CSS3 moderne (Variables, Flexbox, Grid) et Vanilla JS. Aucune dépendance lourde.
-- **Mode Sombre** : Thème unique "Cyber Blue" optimisé pour le confort visuel.
+-   **Terminal-inspired Modern Design**: A dark interface inspired by Linux terminals, with an interactive `neofetch`.
+-   **Multilingual (FR/EN)**: Full support for French and English with automatic detection and language switcher menu.
+-   **Performance & SEO**: Near-perfect Lighthouse score (100/100), optimized for search engines and accessibility.
+-   **Lightweight Stack**: Semantic HTML5, modern CSS3 (Variables, Flexbox, Grid), and Vanilla JS. No heavy dependencies.
+-   **Dark Mode**: Unique "Cyber Blue" theme optimized for visual comfort.
 
-## 📂 Structure du Projet
+## 📂 Project Structure
 
 ```bash
 .
-├── assets/             # Ressources statiques (CSS, JS, Images, Fontes)
+├── assets/             # Static resources (CSS, JS, Images, Fonts)
 │   ├── css/
-│   │   └── main.css    # Feuille de style unique
+│   │   └── main.css    # Single stylesheet
 │   ├── js/
-│   │   └── main.js     # Logique (Menu langue, Easter eggs)
-│   └── favicon.svg     # Logo vectoriel
+│   │   └── main.js     # Logic (Language menu, Easter eggs)
+│   └── favicon.svg     # Vector logo
 ├── fr/
-│   └── index.html      # Version Française
+│   └── index.html      # French version
 ├── en/
-│   └── index.html      # Version Anglaise
-├── index.html          # Redirection automatique (Racine)
+│   └── index.html      # English version
+├── index.html          # Auto-redirect (Root)
 └── README.md           # Documentation
 ```
 
-## 🛠️ Installation & Développement
+## 🛠️ Installation & Development
 
-Pour tester le site en local :
+To test the site locally:
 
-1.  **Cloner le dépôt** :
-
+1.  **Clone the repository**:
     ```bash
     git clone https://github.com/Skyral1/skyral.xyz.git
     cd skyral.xyz
     ```
 
-2.  **Lancer un serveur local** (Recommandé pour éviter les problèmes de chemins absolus/relatifs) :
-    - Avec Python :
-      ```bash
-      python3 -m http.server 8000
-      ```
-    - Avec VS Code : Utiliser l'extension **Live Server**.
+2.  **Start a local server** (Recommended to avoid absolute/relative path issues):
+    *   With Python:
+        ```bash
+        python3 -m http.server 8000
+        ```
+    *   With VS Code: Use the **Live Server** extension.
 
-3.  Ouvrir `http://localhost:8000` dans votre navigateur.
+3.  Open `http://localhost:8000` in your browser.
 
-## ☁️ Déploiement
+## ☁️ Deployment
 
-Ce site est conçu pour être hébergé statiquement (GitHub Pages, Vercel, Netlify, Nginx/Apache).
+This site is designed for static hosting (GitHub Pages, Vercel, Netlify, Nginx/Apache).
+*   **GitHub Pages**: Simply push to the `main` branch and enable GitHub Pages in repository settings (Source: `root`).
 
-- **GitHub Pages** : Poussez simplement sur la branche `main`, et activez GitHub Pages dans les paramètres du dépôt (Source: `root`).
+## 📄 License
 
-## 📄 Licence
-
-Ce projet est sous licence MIT. Sentez-vous libre de vous en inspirer pour votre propre portfolio !
+This project is licensed under the MIT License. Feel free to use it as inspiration for your own portfolio!
 
 ---
-
-_Fait avec ❤️ et du code par [Skyral](https://github.com/Skyral1)._
+*Made with ❤️ and code by [Skyral](https://github.com/Skyral1).*
