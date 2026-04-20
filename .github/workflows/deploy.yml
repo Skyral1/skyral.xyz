@@ -1,24 +1,20 @@
-name: Deploy to Apache Server
+name: Deploy Portfolio
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
 
 jobs:
   deploy:
-    runs-on: self-hosted
-
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
         with:
-          clean: false
-
-      - name: Sync files to Web Root
-        run: |
-          rsync -av --delete --exclude '.git' --exclude '.github' ./ /var/www/html/
-
-      - name: Fix Permissions
-        run: |
-          chown -R deploy:www-data /var/www/html
-          chmod -R 775 /var/www/html
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /srv/docker/portfolio
+            git pull origin main
