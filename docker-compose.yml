@@ -1,0 +1,17 @@
+services:
+  website:
+    build: .
+    container_name: website
+    restart: unless-stopped
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.website.rule=Host(`skyral.xyz`) || Host(`www.skyral.xyz`)"
+      - "traefik.http.routers.website.entrypoints=websecure"
+      - "traefik.http.routers.website.tls.certresolver=letsencrypt"
+      - "traefik.http.services.website.loadbalancer.server.port=80"
+
+networks:
+  proxy:
+    external: true
