@@ -7,7 +7,7 @@ services:
       - "8085:80"
     volumes:
       - /opt/website/public:/usr/share/nginx/html:ro
-      - /opt/website/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - /opt/website/nginx.conf:/etc/nginx/nginx.conf:ro
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.website.rule=Host(`skyral.xyz`) || Host(`www.skyral.xyz`)"
