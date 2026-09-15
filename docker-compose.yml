@@ -1,13 +1,10 @@
 services:
   website:
-    image: nginx:alpine
+    image: ghcr.io/skyral1/skyral.xyz:latest
     container_name: website
     restart: unless-stopped
     ports:
       - "8085:80"
-    volumes:
-      - /opt/website/public:/usr/share/nginx/html:ro
-      - /opt/website/nginx.conf:/etc/nginx/nginx.conf:ro
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.website.rule=Host(`skyral.xyz`) || Host(`www.skyral.xyz`)"
